@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <title>Document</title>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAFMCeZD8UF6GWKVLASiRIlvqsnBNpp1wg",
+            authDomain: "es-6-a69a9.firebaseapp.com",
+            databaseURL: "https://es-6-a69a9.firebaseio.com",
+            projectId: "es-6-a69a9",
+            storageBucket: "es-6-a69a9.appspot.com",
+            messagingSenderId: "677605151389",
+            appId: "1:677605151389:web:06bb3703073c871863ba74",
+            measurementId: "G-ZWWJT54W5E"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-info bg" style="  
+    background: linear-gradient(59deg, #345566, #d8e0e4); padding: 20px;">
+        <h1 class="Facebook f" style="font-family:sans;">Facebook F</h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        <button class="btn" onclick="signup()">signup</button>
+        <button class="btn" onclick="login()" >login</button>
+
+        </button>
+
+        </div>
+    </nav>
+
+
+    <div class="conatiner">
+
+        <h2 style="font-family:sans;">Create Account</h2>
+        <h6 style="font-family:sans;">it's form and always will be</h6>
+        <label for="name">
+            <h5 style="font-family:sans;">Name</h5>
+        </label>
+        <input type="name" class="form-control" id="name" placeholder="name" style="margin: 10px;"></input><br>
+        <label for="email">
+            <h5 style="font-family:sans;">Email </h5>
+        </label>
+        <input type="email"  id="email" class="form-control" placeholder="email" style="margin: 10px;"><br>
+        <label for="password">
+            <h5 style="font-family:sans;">Password</h5>
+        </label>
+        <input type="password" id="password"  class="form-control" placeholder="password" style="margin: 10px; "><br>
+        <label for="age">
+            <h5 style="font-family:sans;">Age</h5>
+        </label>
+        <input type="age" name="age" id="age" placeholder="age" class="form-control"><br>
+
+        <h5 style="font-family: sans-serif; ">Birthday</h5>
+        <!-- <input type="date" name="" id=""> -->
+
+        <select name="Data" id="date">
+            <option style="font-family: sans;">Date</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+
+        </select>
+        <!-- <br><br> -->
+        <select name="month" id="month">
+            <option style="font-family: sans;">month</option>
+            <option value="Jan">Jan</option>
+            <option value="Feb">Feb</option>
+            <option value="March">March</option>
+            <option value="Aprail">Aprail</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+
+        </select>
+        <select class="" name="year" id="year">
+            <option style="font-family: sans;">year</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+
+        </select>
+
+        <br>
+        <!-- <button class="btn" onclick="signup()">signup</button> -->
+        
+        <style>
+            .conatiner {
+                text-align: center;
+
+                text-shadow: aquamarine;
+                padding: 50px;
+                background-color: rgb(235, 229, 221);
+
+            }
+
+            .btn {
+                margin: 30px;
+                /* background: #16222A; */
+                background: -webkit-linear-gradient(59deg, #3A6073, #d1d4d6);
+                background: linear-gradient(59deg, #3A6073, #bac1c5);
+                font-size: 20px;
+            }
+
+            footer {
+                background: #16222A;
+                background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
+                background: linear-gradient(59deg, #4b788f, #16222A);
+                color: white;
+                margin-top: 100px;
+            }
+
+            footer a {
+                color: #fff;
+                font-size: 14px;
+                transition-duration: 0.2s;
+            }
+
+            footer a:hover {
+                color: #FA944B;
+                text-decoration: none;
+            }
+
+            .copy {
+                font-size: 12px;
+                padding: 10px;
+                border-top: 1px solid #FFFFFF;
+            }
+
+            .footer-middle {
+                padding-top: 4em;
+                color: white;
+                /* width: 100px; */
+            }
+
+
+            /*SOCİAL İCONS*/
+
+            /* footer social icons */
+
+            ul.social-network {
+                list-style: none;
+                display: inline;
+                margin-left: 0 !important;
+                padding: 0;
+            }
+
+            ul.social-network li {
+                display: inline;
+                margin: 0 5px;
+            }
+
+
+            /* footer social icons */
+
+            .social-network a.icoFacebook:hover {
+                background-color: #3B5998;
+            }
+
+            .social-network a.icoLinkedin:hover {
+                background-color: #007bb7;
+            }
+
+            .social-network a.icoFacebook:hover i,
+            .social-network a.icoLinkedin:hover i {
+                color: #fff;
+            }
+
+            .social-network a.socialIcon:hover,
+            .socialHoverClass {
+                color: #44BCDD;
+            }
+
+            .social-circle li a {
+                display: inline-block;
+                position: relative;
+                margin: 0 auto 0 auto;
+                -moz-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+                text-align: center;
+                width: 30px;
+                height: 30px;
+                font-size: 15px;
+            }
+
+            .social-circle li i {
+                margin: 0;
+                line-height: 30px;
+                text-align: center;
+            }
+
+            .social-circle li a:hover i,
+            .triggeredHover {
+                -moz-transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                -ms--transform: rotate(360deg);
+                transform: rotate(360deg);
+                -webkit-transition: all 0.2s;
+                -moz-transition: all 0.2s;
+                -o-transition: all 0.2s;
+                -ms-transition: all 0.2s;
+                transition: all 0.2s;
+            }
+
+            .social-circle i {
+                color: #595959;
+                -webkit-transition: all 0.8s;
+                -moz-transition: all 0.8s;
+                -o-transition: all 0.8s;
+                -ms-transition: all 0.8s;
+                transition: all 0.8s;
+            }
+
+            .social-network a {
+                background-color: #F9F9F9;
+            }
+        </style>
+
+
+
+
+        <footer class="mainfooter" role="contentinfo">
+            <div class="footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <!--Column1-->
+                            <div class="footer-pad">
+                                <h4>Heading 1</h4>
+                                <ul class="list-unstyled">
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#">Payment Center</a></li>
+                                    <li><a href="#">Contact Directory</a></li>
+                                    <li><a href="#">Forms</a></li>
+                                    <li><a href="#">News and Updates</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <!--Column1-->
+                            <div class="footer-pad">
+                                <h4>Heading 2</h4>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Website Tutorial</a></li>
+                                    <li><a href="#">Accessibility</a></li>
+                                    <li><a href="#">Disclaimer</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                    <li><a href="#">Webmaster</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <!--Column1-->
+                            <div class="footer-pad">
+                                <h4>Heading 3</h4>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Parks and Recreation</a></li>
+                                    <li><a href="#">Public Works</a></li>
+                                    <li><a href="#">Police Department</a></li>
+                                    <li><a href="#">Fire</a></li>
+                                    <li><a href="#">Mayor and City Council</a></li>
+                                    <li>
+                                        <a href="#"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Follow Us</h4>
+                            <ul class="social-network social-circle">
+                                <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 copy">
+                            <p class="text-center"></p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
